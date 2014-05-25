@@ -1,0 +1,7 @@
+!.gitkeep
+!.gitme
+node_modules
+bower_components
+/datapack
+/temp/*
+!/temp/.gitme

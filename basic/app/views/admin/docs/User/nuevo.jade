@@ -1,0 +1,25 @@
+extends ../../layout/doc_new
+
+block mainform
+	.row
+		.col-md-4.col-sm-6
+			p.lead General
+			.form-group
+				label(for="displayImage") Avatar
+				input(type="file", name="displayImage")
+				p.help-block Sube imagen para el user
+			.form-group
+				label Email
+				input.form-control(type="text", name="email")
+			.form-group
+				label Contraseña
+				input.form-control(type="password", name="password")
+			.form-group
+				label Repetir contraseña
+				input.form-control(type="password", name="password2")
+			.form-group
+				label Rol
+				select.form-control(name="rol")
+					option Registrado
+					option User
+					option Admin

@@ -1,0 +1,22 @@
+{
+  "name": "Hardwire_basic_boilerplate",
+  "version": "0.0.1",
+  "description": "Hardwire - basic demo",
+  "main": "./app.js",
+  "scripts": {
+    "start": "node ./app.js",
+    "createAdminUser": "node ./app/setup/create_admin_user.js",
+    "buildAll": "npm install && bower install && npm run createAdminUser"
+  },
+  "keywords": [
+    "substuff",
+    "CMS"
+  ],
+  "devDependencies": {
+    "browserify": "~3.20.0"
+  },
+  "dependencies": {
+    "hardwire": "git+ssh://git@bitbucket.org/jacoborus/hardwire.git",
+    "safename": "0.0.2"
+  }
+}

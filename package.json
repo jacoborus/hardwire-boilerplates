@@ -1,0 +1,23 @@
+{
+  "name": "hardwire-boilerplates",
+  "version": "0.0.1",
+  "description": "Base boilerplates for Hardwire",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:jacoborus/hardwire-boilerplates.git"
+  },
+  "keywords": [
+    "Hardwire",
+    "boilerplates",
+    "blog"
+  ],
+  "author": "Jacobo Tabernero - jacobo@xarope.eu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jacoborus/hardwire-boilerplates/issues"
+  },
+  "homepage": "https://github.com/jacoborus/hardwire-boilerplates"
+}

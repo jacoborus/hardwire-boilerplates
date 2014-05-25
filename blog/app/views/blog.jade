@@ -1,0 +1,7 @@
+extends layouts/default
+
+block content
+	p: strong Welcome to the blog
+	each entry in data
+		article
+			h1: a(href='/blog/' + entry.slug)= entry.title

@@ -1,0 +1,16 @@
+extends layout
+
+block topfix
+	.topfix
+		input.btn.btn-success(type="submit", value="Guardar", target="mainform")
+
+block content
+	section(id='edit_' + req.modelName + '_' + data._id)
+		.container
+			.row: .col-md-12
+				h1 Edit: #{req.modelName} - #{data._id}
+
+			.row.col-md-12
+
+				form(action="/admin/docs/" + req.modelName + "/" + data._id, method="post", name="mainform", role="form", enctype="multipart/form-data")
+					block mainform

@@ -1,0 +1,23 @@
+extends ../../layout/doc_show
+
+block content
+		section(id="adminuser_"+data.id)
+		.container
+			.row
+				.jumbotron: .container
+					.col-md-2.alignRight
+						if data.avatar
+							img(src="/uploads/user" + data.avatar )
+						else
+							img(src="/img/cara.png")
+					.col-md-4.col-md-offset-2
+						h1 #{data.nombre} #{data.apellidos}
+					.col-md-2.col-md-offset-2
+						a.btn.btn-info(href="/admin/docs/User/" + data._id + "/editar") <span class="glyphicon glyphicon-record" ></span> Editar
+
+				.col-md-4
+					.panel.panel-default
+						.panel-heading
+							h3.panel-title General
+						ul.list-group
+							li.list-group-item Email: #{data.email}

@@ -1,0 +1,21 @@
+extends ../../layout/doc_new
+
+block mainform
+	.row
+		.form-group
+			label Title
+			input(type="text", name="title", value=data.title)
+		.form-group
+			label Entry
+			textarea.form-control(name="entry")!= data.entry
+		.form-group
+			label(for="photo") Imagen
+			p.help-block Imagen .jpg o .png de 1500 x 750 px
+			p Foto actual:
+			img(src="/uploads/blog/" + data.photo, style="max-width:500px;", name="photo", submitter)
+
+		.form-group
+			label(for="imagen") Imagen
+			p.help-block Imagen .jpg o .png de 1500 x 750 px
+			p Foto actual:
+			img(src="/uploads/blog/" + data.imagen, style="max-width:500px;", name="imagen", submitter)

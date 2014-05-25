@@ -1,0 +1,14 @@
+form.form-horizontal(action="/user/login", role="form", method="post")
+	.form-group
+		input(type='hidden', name='_csrf', value="#{csrf_token}")
+
+		label.col-md-3(for='email') Email
+		.col-md-9
+			input.form-control.input-medium#email(type='email', name="email", placeholder='Email')
+
+	.form-group
+		label.col-md-3(for='password') Contraseña
+		.col-md-9
+			input.form-control#password(type='password', name="password", placeholder='Password')
+			br
+			input.btn.btn-success.col-md-8(type='submit', value="Entrar")

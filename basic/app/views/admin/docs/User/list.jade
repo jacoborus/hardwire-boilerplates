@@ -1,0 +1,37 @@
+extends ../../layout/layout
+
+block content
+	section#lista-users
+		.container
+			.row
+				.col-md-9
+					h1 Users
+				.col-md-3: .row
+					.col-xs-6: a.btn.btn-success(href="/admin/docs/User/nuevo") <span class="glyphicon glyphicon-plus-sign" ></span> Nuevo
+					//.col-xs-6: button.btn.btn-info(data-toggle="collapse", data-target="#filtroadminusers") <span class="glyphicon glyphicon-filter" ></span> Filtrar
+
+			.row
+				.col-md-12
+					if data.length !== 0
+						.table-responsive: table.table
+							thead
+								tr
+									th E-mail
+									th Since
+									th Activo
+									th Rol
+									th Borrar
+									th Ver
+									th Editar
+							tbody
+									each user in data
+										tr
+											td: a(href="/admin/docs/User/" + user._id)= user.email
+											td= user.since
+											td= user.activo
+											td= user.rol
+											td: a.alert.deleteDoc(href="/admin/docs/User/" + user._id) <span class="glyphicon glyphicon-remove" ></span>
+											td: a.success(href="/admin/docs/User/" + user._id) <span class="glyphicon glyphicon-eye-open" ></span>
+											td: a.small(href="/admin/docs/User/" + user._id + "/editar") <span class="glyphicon glyphicon-pencil" ></span>
+					else
+						p No se encuentran usuarios

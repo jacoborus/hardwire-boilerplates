@@ -1,0 +1,8 @@
+{
+	"contacto" : {
+		"from" : "{{nombre}}  <{{fromemail}}>",
+		"to" : "{{destiny}}",
+		"subject" : "Mensaje",
+		"text" : "{{texto}}"
+	}
+}

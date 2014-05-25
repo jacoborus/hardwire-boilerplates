@@ -1,0 +1,33 @@
+{
+    "seo" : {
+        "appname" : "subStuff",
+        "keywords" : [
+            "CMS"
+        ],
+        "description" : "Another CMS framework"
+    },
+    "cookie_secret":"mysecret",
+    "session":{
+        "key":"mykey",
+        "secret": "mysecret"
+    },
+    "request_timeout":1000,
+    "globalUrl" : "localhost:4000",
+    "port":4000,
+    "mongodb":{
+        "uri":"mongodb://localhost:27017/subStuff"
+    },
+    "character_encoding":"utf-8",
+    "uploadFolders" : {
+        "Blog" : "./datapack/uploads/blog"
+    },
+	"passports" : {
+        "local" : true,
+        "facebook" : false
+    },
+    "publicFolders" : {
+        "/components" : "/bower_components"
+    },
+    "tempFolder" : "temp",
+    "logPath": "datapack/log"
+}

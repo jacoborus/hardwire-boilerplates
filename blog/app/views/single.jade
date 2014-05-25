@@ -1,0 +1,7 @@
+extends layouts/default
+
+block content
+	article
+		h1= data.title
+		img(src="/uploads/blog/" + data.photo, style="max-width:500px;")
+		p= data.entry

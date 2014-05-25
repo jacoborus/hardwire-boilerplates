@@ -1,0 +1,15 @@
+extends layout
+
+block topfix
+	.topfix
+		input.btn.btn-success(type="submit", value="Crear", target="mainform")
+
+
+block content
+	section(id="nuevo_item_" + req.modelName)
+		.container
+			.row: .col-md-12
+				h1 #{req.modelName}: nuevo ítem
+
+				form(action="/admin/docs/" + req.modelName, method="post", name="mainform", role="form", enctype="multipart/form-data")
+					block mainform
