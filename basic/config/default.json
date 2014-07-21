@@ -1,6 +1,6 @@
 {
     "seo" : {
-        "appname" : "subStuff",
+        "appname" : "HardWireBasic",
         "keywords" : [
             "CMS"
         ],
@@ -15,7 +15,7 @@
     "globalUrl" : "localhost:4000",
     "port":4000,
     "mongodb":{
-        "uri":"mongodb://localhost:27017/subStuff"
+        "uri":"mongodb://localhost:27017/hwBasic"
     },
     "character_encoding":"utf-8",
     "uploadFolders" : {

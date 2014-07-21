@@ -1,0 +1,27 @@
+extends ../../layout/layout
+
+block content
+	section#list-Note
+		h1 Blog
+		a.pure-button(href="/admin/docs/Note/new"): b + New note
+
+		if data.length !== 0
+			.v-pad: table.pure-table
+				thead
+					tr
+						th Title
+						th Slug
+						th Ver
+						th Editar
+						th Borrar
+
+				tbody
+					each note in data
+						tr
+							td: a(href='/admin/docs/Note/'+note._id)!= note.title
+							td= note.slug
+							td: a.pure-button.button-xsmall.button-secondary(href="/admin/docs/Note/" + note._id) Show
+							td: a.pure-button.button-xsmall.button-warning(href="/admin/docs/Note/" + note._id + "/edit") Edit
+							td: a.deleteDoc.pure-button.button-xsmall.button-error(href="/admin/docs/Note/" + note._id ) Delete
+
+		p #{data.length} notes

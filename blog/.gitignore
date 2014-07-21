@@ -2,6 +2,6 @@
 !.gitme
 node_modules
 bower_components
-/datapack
-/temp/*
-!/temp/.gitme
+datapack
+.gulp*
+npm-debug.log

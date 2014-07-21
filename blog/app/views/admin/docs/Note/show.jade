@@ -6,13 +6,11 @@ block content
 		.row
 			.col-md-10
 				h1 #{data.title}
-		.row
-			.col-md-4
+
 				.panel.panel-default
 					ul.list-group
 						li.list-group-item
 							!=data.entry
-		.row
-			img(src="/uploads/blog/" + data.photo, style="max-width:500px;")
-		.row
-			img(src="/uploads/blog/" + data.imagen, style="max-width:500px;")
+
+			.col-md-10
+				img(src="/uploads/blog/" + data.image, style="max-width:100%px;")

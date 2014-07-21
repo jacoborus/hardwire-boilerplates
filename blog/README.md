@@ -7,7 +7,7 @@ Installation
 ------------
 
 ```
-$ npm run buildAll
+$ npm run build
 ```
 
 

@@ -1,11 +1,11 @@
 'use strict';
 
-exports.wiretree = function (app, models, Blog) {
+exports.wiretree = function (app, models, Note) {
 
 	var mod = {};
 
 	mod.index =  function (req, res, next) {
-		Blog.find()
+		Note.find()
 		.exec( function (err, data) {
 			if (err) {throw(err)};
 			res.render( 'blog', {
@@ -16,7 +16,7 @@ exports.wiretree = function (app, models, Blog) {
 	};
 
 	mod.single =  function (req, res, next) {
-		Blog.find({slug: req.params.slug})
+		Note.find({slug: req.params.slug})
 		.exec( function (err, data) {
 			if (err) {throw(err)};
 			res.render( 'single', {

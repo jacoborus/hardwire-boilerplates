@@ -11,7 +11,8 @@
     "tests"
   ],
   "dependencies": {
-    "submitter": "~0.0.4",
-    "nanobar": "~0.2.0"
+    "submitter": "~0.0.6",
+    "nanobar": "~0.2.0",
+    "pure": "~0.5.0"
   }
 }

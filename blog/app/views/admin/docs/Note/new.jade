@@ -1,0 +1,17 @@
+extends ../../layout/doc_new
+
+block mainform
+	.pure-form-stacked
+		.v-pad
+			label Title
+			input(type="text", name="title", value=data.title)
+		.pure-u-xl-1-2.pure-u-lg-1-2pure-u-md-1: .v-pad
+			label(for="imagen") Imagen
+			if data.imagen
+				img(src="/uploads/blog/" + data.image, style="max-width:100%;", name="image", alt="seleccionar imagen", submitter)
+			else
+				img(style="max-width:100%;", name="image", alt="seleccionar imagen", submitter)
+			p.pure-form-message Imagen .jpg o .png de 600 x 400 px
+		.pure-u-xl-1-2.pure-u-lg-1-2.pure-u-md-1: .v-pad
+			label Entry
+			textarea(name="entry")!= data.entry

@@ -6,13 +6,21 @@ exports.wiretree = function () {
 
 	mod.index =  function (req, res, next) {
 		res.render('index', {
-			title: 'Hardwire'
+			title: 'Hardwire',
+			data: {},
+			contacto: {}
 		});
 	};
 
 	mod.login =  function (req, res, next) {
 		res.render('login', {
 			title: 'Login'
+		});
+	};
+
+	mod.contacto =  function (req, res, next) {
+		res.render( 'contact', {
+			title: 'Contact'
 		});
 	};
 

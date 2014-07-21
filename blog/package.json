@@ -1,12 +1,14 @@
 {
   "name": "Hardwire_blog_boilerplate",
   "version": "0.0.1",
-  "description": "Hardwire - blog demo",
+  "description": "Hardwire - blog",
   "main": "./app.js",
   "scripts": {
     "start": "node ./app.js",
     "createAdminUser": "node ./app/setup/create_admin_user.js",
-    "buildAll": "npm install && bower install && npm run createAdminUser"
+    "build": "npm install && bower install && npm run createAdminUser",
+    "dev" : "node ./node_modules/gulp/bin/gulp dev",
+    "buildfront" : "node ./node_modules/gulp/bin/gulp build"
   },
   "keywords": [
     "substuff",
@@ -14,10 +16,20 @@
     "CMS"
   ],
   "devDependencies": {
-    "browserify": "~3.20.0"
+    "browserify": "~3.20.0",
+    "gulp": "^3.5.6",
+    "gulp-browserify": "^0.5.0",
+    "gulp-concat": "^2.2.0",
+    "gulp-jshint": "^1.5.0",
+    "gulp-newer": "^0.3.0",
+    "gulp-rename": "^1.2.0",
+    "gulp-styl": "^0.2.1",
+    "gulp-stylus": "^0.1.0",
+    "gulp-uglify": "^0.2.1",
+    "jshint-stylish": "^0.1.5"
   },
   "dependencies": {
     "hardwire": "latest",
-    "safename": "0.0.2"
+    "safename": "latest"
   }
 }

@@ -17,8 +17,15 @@
 	"strict": true,
 	"trailing": true,
 	"smarttabs": true,
-	"globals": {
-		"require": false,
-		"module": false
+  	"globals": {
+	    "module": false,
+	  	"$": false,
+	  	"Backbone": false,
+	  	"window": false,
+	  	"require": false,
+	  	"document": false,
+	  	"google": false,
+	  	"alert": false,
+	  	"confirm": false
 	}
 }

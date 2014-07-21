@@ -7,13 +7,16 @@ exports.wiretree = function (mongoose) {
 
 	Schema = mongoose.Schema;
 	/*
-		Blog Schema -----------------------
+		Note Schema -----------------------
 	 */
-	var BlogSchema;
-	BlogSchema = new Schema({
+	var NoteSchema;
+	NoteSchema = new Schema({
 		title: {
 			type: String,
 			required: true
+		},
+		updated: {
+			type: Date
 		},
 		date: {
 			type: Date,
@@ -25,19 +28,19 @@ exports.wiretree = function (mongoose) {
 			required: true
 		},
 		entry: String,
-		photo: String,
-		imagen: String
+		image: String
 	});
 
 
 	/*
 		Pre-save hooks --------------------------------------------------------------------------
 	 */
-	BlogSchema.pre( 'validate', function (next) {
+	NoteSchema.pre( 'validate', function (next) {
 		this.slug = safename( this.title );
+		this.updated = new Date();
 		next();
 	});
 
-	return mongoose.model('Blog', BlogSchema);
+	return mongoose.model( 'Note', NoteSchema );
 };
 

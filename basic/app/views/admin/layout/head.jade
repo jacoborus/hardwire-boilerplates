@@ -1,18 +1,21 @@
 head
 	meta(charset="utf-8")
-	meta(name="viewport", content="width=device-width")
+	meta(name="viewport", content="width=device-width, initial-scale=1")
 
 	title= pkg.appname + ' - ' + title
 	meta(http-equiv="Content-type", content="text/html;charset=UTF-8")
 	meta(name="keywords", content=pkg.keywords.join(","))
-	meta(name="description", content=pkg.description)
+	meta(name="description", content="Hardwire control panel")
 
 	link(href="/favicon.ico", rel="shortcut icon", type="image/x-icon")
 
 	// Application styles
-	link(rel='stylesheet', href='/css/bootadmin.css')
-	link(rel='stylesheet', href='/css/sideadmin.css')
+	link(rel='stylesheet', href='/components/pure/pure.css')
+	//link(rel='stylesheet', href='/css/sideadmin.css')
+	//link(rel='stylesheet', href='/css/pure-skin.css')
 	link(rel='stylesheet', href='/css/admin.css')
+	//[if lte IE 8]><link rel="stylesheet" href="/css/side-menu-old-ie.css"><![endif]
+	//[if gt IE 8]><!--><link rel="stylesheet" href="/css/side-menu.css"><!--<![endif]
 
 	//Le HTML5 shim, for IE6-8 support of HTML5 elements
 	//if lt IE 9

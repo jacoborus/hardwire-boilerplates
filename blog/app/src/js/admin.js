@@ -1,6 +1,8 @@
 'use strict';
 
-var $cl, $id, $ajax, Nanobar, editor, nanobar, options, submitter, delBtns;
+
+/*jshint browser:true */
+var $cl, $id, $ajax, Nanobar, nanobar, options, submitter, delBtns;
 
 submitter = require('../../../bower_components/submitter/submitter');
 
@@ -47,7 +49,7 @@ options = {
 	progress: function (p) {
 		nanobar.go(p);
 	},
-	fail: function (e) {
+	fail: function () {
 		nanobar.go(100);
 		alert('Ups! error transfiriendo datos');
 	},
@@ -56,19 +58,18 @@ options = {
 		nanobar.go(100);
 	}
 };
-
 if (document.querySelector( 'form[name="mainform"]' ) !== null) {
 	submitter('mainform', options);
 }
 
-delBtns = document.querySelector('table tbody tr a.deleteDoc') || {};
-
-Array.prototype.forEach.call( delBtns, function (el, index) {
+delBtns = document.querySelectorAll('a.deleteDoc') || {};
+console.log( 'hola');
+Array.prototype.forEach.call( delBtns, function (el) {
 	var donde = el.getAttribute( 'href' );
 	el.addEventListener(
-	    'click',
-	    function (e) {
-			var r;
+		'click',
+		function (e) {
+			var r, res;
 			e.preventDefault();
 			r = confirm('¿Are you sure?');
 			if (r) {
@@ -76,8 +77,9 @@ Array.prototype.forEach.call( delBtns, function (el, index) {
 					if (err) {
 						console.log( err );
 					} else {
-						console.log(result);
-						if (result.res === true) {
+						res = JSON.parse( result );
+						console.log(res);
+						if (res.res === true) {
 							return location.reload();
 						} else {
 							return alert('error, no encontrado');
@@ -97,7 +99,35 @@ if (mds) {
 	});
 }
 
-document.querySelector( '#menu-toggle' ).addEventListener( 'click', function(e) {
+
+var layout   = document.getElementById('layout'),
+	menu     = document.getElementById('menu'),
+	menuLink = document.getElementById('menuLink');
+
+function toggleClass(element, className) {
+	var classes = element.className.split(/\s+/),
+		length = classes.length,
+		i = 0;
+
+	for(; i < length; i++) {
+	  if (classes[i] === className) {
+		classes.splice(i, 1);
+		break;
+	  }
+	}
+	// The className is not found
+	if (length === classes.length) {
+		classes.push(className);
+	}
+
+	element.className = classes.join(' ');
+}
+
+menuLink.onclick = function (e) {
+	var active = 'active';
+
 	e.preventDefault();
-	document.querySelector('#wrapper').classList.remove('active');
-});
+	toggleClass(layout, active);
+	toggleClass(menu, active);
+	toggleClass(menuLink, active);
+};
