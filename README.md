@@ -1,6 +1,12 @@
 Hardwire boilerplates
 =====================
 
+DEPRECATED
+----------
+
+See [hw-base](https://github.com/jacoborus/hw-base) and [hw-blog](https://github.com/jacoborus/hw-blog)
+
+
 Two boilerplates for Hardwire: basic and blog
 
 ---
